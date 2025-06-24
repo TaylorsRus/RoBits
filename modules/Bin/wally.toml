@@ -1,0 +1,8 @@
+[package]
+name = "taylorsrus/bin"
+description = "Bin class for KISS cleanup."
+version = "1.0.0"
+license = "MIT"
+authors = ["Joshua Taylor"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
