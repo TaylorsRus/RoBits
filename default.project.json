@@ -1,6 +1,11 @@
 {
   "name": "roblox-util",
   "tree": {
-    "$path": "libs"
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Modules": {
+        "$path": "Modules"
+      }
+    }
   }
 }
