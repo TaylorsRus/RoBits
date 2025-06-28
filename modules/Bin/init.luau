@@ -1,20 +1,18 @@
 type Item = Instance | RBXScriptConnection | thread | ((...any) -> ...any)
 
 export type Bin = {
+	_bin: { Item },
+
 	Add: (Bin, Item) -> Item,
 	Remove: (Bin, Item) -> Item,
 	Clear: (Bin) -> (),
 }
-type BinInternal = Bin & {
-	_bin: { Item },
-}
-
-local function Add(self: BinInternal, item: Item)
+local function Add(self: Bin, item: Item)
 	table.insert(self._bin, item)
 	return item
 end
 
-local function Remove(self: BinInternal, item: Item)
+local function Remove(self: Bin, item: Item)
 	local bin = self._bin
 	local index = table.find(bin, item)
 	if not index then
@@ -25,8 +23,10 @@ local function Remove(self: BinInternal, item: Item)
 	return item
 end
 
-local function Clear(self: BinInternal)
-	for _, item in self._bin do
+local function Clear(self: Bin)
+	local bin = self._bin
+
+	for _, item in bin do
 		if typeof(item) == "Instance" then
 			item:Destroy()
 		elseif typeof(item) == "RBXScriptConnection" then
@@ -39,17 +39,18 @@ local function Clear(self: BinInternal)
 			end)
 		end
 	end
+	table.clear(bin)
 end
 
 local function new(): Bin
-	local self = {
+	local self: Bin = {
 		_bin = {},
 		Add = Add,
 		Remove = Remove,
 		Clear = Clear,
 	}
 
-	return (self :: any) :: Bin
+	return self
 end
 
 return {
