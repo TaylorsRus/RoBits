@@ -30,7 +30,7 @@ describe("Bin", function()
 		bin:Add(instance)
 		bin:Clear()
 
-		expect(instance).toBeNil()
+		expect(instance.Parent).toBeNil()
 	end)
 
 	test("Add and cleanup an RbxScriptConnection", function()
