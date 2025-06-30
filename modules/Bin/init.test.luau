@@ -33,7 +33,7 @@ describe("Bin", function()
 		expect(instance.Parent).toBeNil()
 	end)
 
-	test("Add and cleanup an RbxScriptConnection", function()
+	test("Add and cleanup a RbxScriptConnection", function()
 		local connection = RunService.Stepped:Connect(function() end)
 		bin:Add(connection)
 		bin:Clear()
