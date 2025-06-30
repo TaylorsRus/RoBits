@@ -5,6 +5,6 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 private = true
 
-[dependencies]
+[dev-dependencies]
 Jest = "jsdotlua/jest@3.10.0"
 JestGlobals = "jsdotlua/jest-globals@3.10.0"

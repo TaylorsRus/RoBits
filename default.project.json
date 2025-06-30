@@ -5,7 +5,8 @@
     "ReplicatedStorage": {
       "Modules": {
         "$path": "modules"
-      }
+      },
+      "DevPackages": { "$path": "DevPackages" }
     }
   }
 }
