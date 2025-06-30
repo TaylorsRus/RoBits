@@ -7,12 +7,12 @@ export type Bin = {
 	Remove: (Bin, Item) -> Item,
 	Clear: (Bin) -> (),
 }
-local function Add(self: Bin, item: Item)
+local function Add(self: Bin, item: Item): Item
 	table.insert(self._bin, item)
 	return item
 end
 
-local function Remove(self: Bin, item: Item)
+local function Remove(self: Bin, item: Item): Item
 	local bin = self._bin
 	local index = table.find(bin, item)
 	if not index then
