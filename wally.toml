@@ -3,6 +3,7 @@ name = "taylorsrus/roblox-util"
 version = "0.1.0"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+private = true
 
 [dependencies]
 Jest = "jsdotlua/jest@3.10.0"
