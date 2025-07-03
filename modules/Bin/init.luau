@@ -7,7 +7,6 @@ type ConnectionLike = {
 	Disconnect: (any) -> (),
 } | RBXScriptConnection
 
--- type Cleanable = { Destroy: (any) -> () } & { CleanUp: (any) -> () } & { Clean: (any) -> () } & { Clear: (any) -> () }
 type Cleanable = {
 	Destroy: (any) -> ()?,
 	CleanUp: (any) -> ()?,
