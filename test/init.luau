@@ -4,8 +4,8 @@ local Modules = ReplicatedStorage.Modules
 
 local Jest = require(ReplicatedStorage.DevPackages.Jest)
 
-local processServiceExists, ProcessService = pcall(function()
-	return game:GetService("ProcessService")
+local processServiceExists, ProcessService: any = pcall(function()
+	return game:GetService("ProcessService" :: any)
 end)
 
 local status, result = Jest.runCLI(Modules, {
