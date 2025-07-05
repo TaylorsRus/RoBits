@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "RobloxUtil",
   description: "A collection of Roblox, and sometimes pure Luau utilities.",
+  base: "/repo/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
