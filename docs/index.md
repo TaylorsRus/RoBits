@@ -5,21 +5,17 @@ layout: home
 hero:
   name: "RobloxUtil"
   text: "A collection of Roblox, and sometimes pure Luau utilities."
-  tagline: My great project tagline
+  tagline: Roblox dev, made easier.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Get Started
+      link: /getting-started
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Integration
+    details: Effortless integration with any Roblox project.
+  - title: Ease of use
+    details: Plug-and-play utilities for rapid development.
+  - title: Do less to get more
+    details: Strict-mode-safe utilities that work instantly, no boilerplate needed.
 ---
-
