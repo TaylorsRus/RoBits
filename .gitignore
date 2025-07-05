@@ -3,3 +3,6 @@ sourcemap.json
 *.rbxl.lock
 /Packages
 /DevPackages
+docs/.vitepress/dist
+docs/.vitepress/cache
+node_modules
