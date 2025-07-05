@@ -1,6 +1,6 @@
 # Getting Started
 
-These utility modules can be fetched via (Wally)[https://wally.run], a package manager for Roblox.
+These utility modules can be fetched via [Wally](https://wally.run), a package manager for Roblox.
 
 ## Wally Configuration
 
