@@ -2,9 +2,10 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/RobloxUtil/",
   title: "RobloxUtil",
   description: "A collection of Roblox, and sometimes pure Luau utilities.",
-  base: "/repo/",
+  lang: "en-UK",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -23,8 +24,6 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/TaylorsRus" }],
   },
 });
