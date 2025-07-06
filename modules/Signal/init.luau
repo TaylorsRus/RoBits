@@ -10,6 +10,7 @@ export type Signal<T...> = {
 
 	Connect: (Signal<T...>, Callback: Callback<T...>) -> Connection<T...>,
 	Fire: (Signal<T...>, T...) -> (),
+	Wait: (Signal<T...>) -> T...,
 }
 
 export type Connection<T...> = {
@@ -63,6 +64,18 @@ local function Connect<T...>(self: Signal<T...>, Callback: (T...) -> ()): Connec
 	return connection
 end
 
+local function Wait<T...>(self: Signal<T...>): T...
+	local thread = coroutine.running()
+	local connection: Connection<T...> = nil
+
+	connection = self:Connect(function(...)
+		connection:Disconnect()
+		coroutine.resume(thread, ...)
+	end)
+
+	return coroutine.yield()
+end
+
 local function Fire<T...>(self: Signal<T...>, ...: T...)
 	local listener = self._head
 	while listener do
@@ -76,6 +89,7 @@ local function new<T...>(): Signal<T...>
 		_head = nil,
 		Connect = Connect,
 		Fire = Fire,
+		Wait = Wait,
 	}
 	return self
 end

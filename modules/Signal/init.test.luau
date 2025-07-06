@@ -151,4 +151,28 @@ describe("Signal", function()
 		connection:Disconnect()
 		expect(connection.Connected).toBe(false)
 	end)
+
+	test("Wait returns fired arguments", function()
+		local expected1, expected2 = 42, "test"
+		task.spawn(function()
+			task.wait(0.1)
+			signal:Fire(expected1, expected2)
+		end)
+
+		local result1, result2 = signal:Wait()
+		expect(result1).toBe(expected1)
+		expect(result2).toBe(expected2)
+	end)
+
+	test("Wait yields until Fire is called", function()
+		local fired = false
+		task.spawn(function()
+			task.wait(0.2)
+			fired = true
+			signal:Fire(99)
+		end)
+		local result = signal:Wait()
+		expect(fired).toBe(true)
+		expect(result).toBe(99)
+	end)
 end)
