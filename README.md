@@ -9,7 +9,7 @@ RoBits is a collection of Roblox, and sometimes pure luau, libraries and utiliti
 ## Getting started
 
 Read the
-[getting started](https://taylorsrus.github.io/RobloxUtil/getting-started.html)
+[getting started](https://taylorsrus.github.io/RoBits/getting-started.html)
 section of the documentation for an example of it's use.
 
 ## Honorable mentions
