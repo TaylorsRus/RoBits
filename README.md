@@ -1,7 +1,7 @@
 <br>
 
 <div align="center">
-    <img src="/Logo.png" width="600" />
+    <img src="/Logo.png" width="300" />
 </div>
 
 RoBits is a collection of Roblox, and sometimes pure luau, libraries and utilities inspired by [RbxUtil](https://sleitnick.github.io/RbxUtil/).
