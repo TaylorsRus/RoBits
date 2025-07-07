@@ -9,6 +9,7 @@ export type Signal<T...> = {
 	_head: Listener<T...>?,
 
 	Connect: (Signal<T...>, Callback: Callback<T...>) -> Connection<T...>,
+	Once: (Signal<T...>, Callback: Callback<T...>) -> Connection<T...>,
 	Fire: (Signal<T...>, T...) -> (),
 	Wait: (Signal<T...>) -> T...,
 }
@@ -48,10 +49,10 @@ local function Disconnect<T...>(self: Connection<T...>)
 	self._listener = nil :: any
 end
 
-local function Connect<T...>(self: Signal<T...>, Callback: (T...) -> ()): Connection<T...>
+local function Connect<T...>(self: Signal<T...>, callback: (T...) -> ()): Connection<T...>
 	local listener: Listener<T...> = {
 		Next = self._head,
-		Callback = Callback,
+		Callback = callback,
 	}
 	self._head = listener
 
@@ -64,12 +65,21 @@ local function Connect<T...>(self: Signal<T...>, Callback: (T...) -> ()): Connec
 	return connection
 end
 
-local function Wait<T...>(self: Signal<T...>): T...
-	local thread = coroutine.running()
+local function Once<T...>(self: Signal<T...>, callback: Callback<T...>): Connection<T...>
 	local connection: Connection<T...> = nil
 
 	connection = self:Connect(function(...)
 		connection:Disconnect()
+		callback(...)
+	end)
+
+	return connection
+end
+
+local function Wait<T...>(self: Signal<T...>): T...
+	local thread = coroutine.running()
+
+	self:Once(function(...)
 		coroutine.resume(thread, ...)
 	end)
 
@@ -88,6 +98,7 @@ local function new<T...>(): Signal<T...>
 	local self: Signal<T...> = {
 		_head = nil,
 		Connect = Connect,
+		Once = Once,
 		Fire = Fire,
 		Wait = Wait,
 	}
