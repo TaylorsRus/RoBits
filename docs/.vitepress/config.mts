@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/RoBits/",
-  title: "RobloxUtil",
+  title: "RoBits",
   description:
     "A collection of Roblox, and sometimes pure Luau, libraries and utilities.",
   lang: "en-UK",
