@@ -21,7 +21,10 @@ export default defineConfig({
       },
       {
         text: "Modules",
-        items: [{ text: "Bin", link: "/modules/bin" }],
+        items: [
+          { text: "Bin", link: "/modules/bin" },
+          { text: "Signal", link: "/modules/signal" },
+        ],
       },
     ],
 
