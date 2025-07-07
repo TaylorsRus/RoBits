@@ -1,5 +1,5 @@
 [package]
-name = "taylorsrus/bin"
+name = "taylorsrus/signal"
 description = "Signal class, a lightweight alternative to BindableEvents."
 version = "1.0.0"
 license = "MIT"
