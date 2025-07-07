@@ -6,6 +6,8 @@ hero:
   name: "RoBits"
   text: "A collection of Roblox, and sometimes pure Luau, libraries and utilities"
   tagline: Roblox dev, made easier.
+  logo:
+    src: "RoBits/logo.png"
   actions:
     - theme: brand
       text: Get Started

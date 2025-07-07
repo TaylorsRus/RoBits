@@ -6,9 +6,13 @@ export default defineConfig({
   title: "RoBits",
   description:
     "A collection of Roblox, and sometimes pure Luau, libraries and utilities.",
+
+  head: [["link", { rel: "icon", href: "/RoBits/logo.png" }]],
   lang: "en-UK",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: "/RoBits/logo.png",
+
     nav: [
       { text: "Home", link: "/" },
       { text: "GitHub", link: "https://github.com/TaylorsRus/RoBits" },
