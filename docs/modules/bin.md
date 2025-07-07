@@ -1,3 +1,19 @@
+# Bin
+
+Bin is a module for the quick and easy cleanup of objects. As of writing this, it can clean up the following
+
+- Instance
+- RBXScriptConnection
+- thread
+- Table with function `Destroy`, `CleanUp`, `Clean`, `Clear`, or `Disconnect`
+
+It introduces syntax sugar for certain objects, such as one mimicking a connection, so that you can shorthand queue it for being cleaned up, with methods such as `Connect(ConnectionLike)`.
+This makes it trivial to cleanup the items you've created during a function, by centralizing the data into one place, and we call that, `Bin`.
+
+More shapes and sizes are planned to be added for compatiblity with Bin. Bin will aim to support any shape of data that is commonly seen around Roblox.
+
+<small><span style="color:gray">Bin does plan to support custom cleanup methods being passed as args.</span></small>
+
 ## Types
 
 ### `Bin`

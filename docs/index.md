@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "RobloxUtil"
-  text: "A collection of Roblox, and sometimes pure Luau utilities."
+  name: "RoBits"
+  text: "A collection of Roblox, and sometimes pure Luau, libraries and utilities"
   tagline: Roblox dev, made easier.
   actions:
     - theme: brand
