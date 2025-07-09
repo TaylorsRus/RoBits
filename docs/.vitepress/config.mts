@@ -11,7 +11,7 @@ export default defineConfig({
   lang: "en-UK",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: "/RoBits/logo.png",
+    logo: "logo.png",
 
     nav: [
       { text: "Home", link: "/" },
