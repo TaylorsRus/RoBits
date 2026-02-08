@@ -103,6 +103,16 @@ describe("Bin", function()
 		expect(connection.Connected).toBe(false)
 	end)
 
+	test("Connect and cleanup a RbxScriptSignal using Once", function()
+		local connection = bin:Once(RunService.Stepped, function() end)
+
+		expect(connection.Connected).toBe(true)
+
+		bin:Clear()
+
+		expect(connection.Connected).toBe(false)
+	end)
+
 	test("Add and cleanup a custom connection object", function()
 		local connection = newCustomConnection()
 		bin:Add(connection)
@@ -113,6 +123,16 @@ describe("Bin", function()
 
 	test("Connect and cleanup a custom signal object", function()
 		local connection = bin:Connect(newCustomSignal(), function() end)
+
+		expect(connection.Connected).toBe(true)
+
+		bin:Clear()
+
+		expect(connection.Connected).toBe(false)
+	end)
+
+	test("Connect and cleanup a custom signal object using Once", function()
+		local connection = bin:Once(newCustomSignal(), function() end)
 
 		expect(connection.Connected).toBe(true)
 
