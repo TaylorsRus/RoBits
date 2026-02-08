@@ -27,6 +27,7 @@ export type Bin = {
 	Remove: <T>(Bin, Item & T) -> T,
 	Clear: (Bin) -> (),
 	Connect: (Bin, Signal, Function) -> ConnectionLike,
+	Once: (Bin, Signal, Function) -> ConnectionLike,
 }
 
 local CLEANUP_METHODS = {
@@ -87,6 +88,10 @@ local function Connect<T>(self: Bin, signal: Signal, fn: Function): ConnectionLi
 	return self:Add(signal:Connect(fn))
 end
 
+local function Once<T>(self: Bin, signal: Signal, fn: Function): ConnectionLike
+	return self:Add(signal:Once(fn))
+end
+
 local function new(): Bin
 	local self = {
 		_bin = {},
@@ -94,6 +99,7 @@ local function new(): Bin
 		Remove = Remove,
 		Clear = Clear,
 		Connect = Connect,
+		Once = Once,
 	}
 
 	return self :: any
